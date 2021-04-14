@@ -40,6 +40,18 @@ class AddressBook{
         }else{ throw "Incorrect Email Id"; }
     }
 
+    get getfirstname(){ return this.firstname; }
+    
+    set setfirstname(firstname){ 
+        let regexname = RegExp('[A-Z]{1}[a-z]{3,}');
+        if(regexname.test(firstname)){
+            this.firstname = firstname;
+        }
+        else{
+            throw "Name is Incorrect";
+        }
+    }
+
     toString(){
         return "FirstName= " +this.firstname+ " LastName= " +this.lastname+ " Address= " +this.address+ " City= " 
         +this.city+ " State= " +this.state+ " Zip= " +this.zip+ " PhoneNumber= " +this.phone_number+ " Email= " +this.email;
@@ -48,11 +60,15 @@ class AddressBook{
 
 let addressBook = [];
 try{
-    let contact1 = new AddressBook("Omkar","Mali","Palaspe","Panvel","Maharashtra",400088,9029090642,"omkar@gmail.com");
-    let contact2 = new AddressBook("Mukesh","Chouhan","Wadala","Mumbai","Mahharastra",400012,8918192191,"mukesh@gmail.com");
+    let contact1 = new AddressBook("Mark","Robinson","Malibu","Venice","California",100019,9019291971,"mark@gmail.com");
+    let contact2 = new AddressBook("Robert","Downey","Broklyn","Manhattan","Newyork",300013,8918192191,"robert@gmail.com");
     
     addressBook.push(contact1); 
     addressBook.push(contact2);
+    
+    if( contact1.getfirstname == "Mark" ){
+        contact1.setfirstname = "Maggie";
+    }
 }catch(e){
     console.error(e);
 }
