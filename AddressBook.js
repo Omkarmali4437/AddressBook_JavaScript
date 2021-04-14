@@ -60,7 +60,7 @@ class AddressBook{
 
 let addressBook = [] ;
 try{
-    
+
     let contact1 = new AddressBook("Mark","Robinson","Malibu","Venice","California",100019,9019291971,"mark@gmail.com");
     let contact2 = new AddressBook("Robert","Downey","Broklyn","Manhattan","Newyork",300013,8918192191,"robert@gmail.com");
     let contact3 = new AddressBook("Chris","Davidson","Saltlake","Saltlakecity","Texas",400018,8891823349,"chris@gmail.com");
@@ -114,3 +114,10 @@ console.log("Count of contact by city are: "+sumofContactByCity);
 let statecount = addressBook.map(ele => ele.state === 'California' );
 let sumofContactByState = statecount.reduce((prev, curr)=> prev + curr); 
 console.log("Count of contact by state are: "+sumofContactByState);
+
+
+console.log("+++++++++++++");
+console.log("Contacts is Manhattan city is: \n"+addressBook.filter(element => element.city == 'Manhattan'));
+
+console.log("+++++++++++++");
+console.log("Contacts is California state is: \n"+addressBook.filter(element => element.state == 'California'));
