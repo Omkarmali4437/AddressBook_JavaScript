@@ -58,17 +58,22 @@ class AddressBook{
     }
 }
 
-let addressBook = [];
+let addressBook = [] ;
 try{
     let contact1 = new AddressBook("Mark","Robinson","Malibu","Venice","California",100019,9019291971,"mark@gmail.com");
     let contact2 = new AddressBook("Robert","Downey","Broklyn","Manhattan","Newyork",300013,8918192191,"robert@gmail.com");
-    
+    let contact3 = new AddressBook("Chirs","Davidson","Saltlake","Saltlakecity","Texas",400018,8891823349,"chris@gmail.com");
+    let contact4 = new AddressBook("Keem","Star","Capital","Phoenix","Arizona",866019,7827826798,"keem@gmail.com");
+
     addressBook.push(contact1); 
     addressBook.push(contact2);
+    addressBook.push(contact3);
+    addressBook.push(contact4);
+     
+    if( addressBook.find( name => name.firstname == 'Mark' ) ){
+        addressBook.find( name => name.setfirstname = 'Robin' );
+    }else{ console.log("false"); }
     
-    if( contact1.getfirstname == "Mark" ){
-        contact1.setfirstname = "Maggie";
-    }
 }catch(e){
     console.error(e);
 }
