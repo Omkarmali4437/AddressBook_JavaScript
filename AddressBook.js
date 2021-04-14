@@ -69,13 +69,24 @@ try{
     addressBook.push(contact2);
     addressBook.push(contact3);
     addressBook.push(contact4);
-     
+
+    console.log(addressBook);
+    console.log("Size before deltion: "+addressBook.length);
+    console.log("+++++++++++++++"); 
+
     if( addressBook.find( name => name.firstname == 'Mark' ) ){
         addressBook.find( name => name.setfirstname = 'Robin' );
     }else{ console.log("false"); }
+
+    if( addressBook.find( name => name.firstname == 'Keem' ) ){
+        console.log(addressBook.findIndex(name => name.firstname == 'Keem'));
+        addressBook.splice(3,1);
+        console.log("+++++++++++++++");
+    }
     
 }catch(e){
     console.error(e);
 }
 
 console.log(addressBook);
+console.log("Size after deltion: "+addressBook.length);
