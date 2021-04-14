@@ -120,3 +120,7 @@ console.log("+++++++++++++");
 let statecount = addressBook.map(ele => ele.state === 'California' );
 let sumofContactByState = statecount.reduce((prev, curr)=> prev + curr); 
 console.log("Count of contact by state are: "+sumofContactByState);
+
+console.log("+++++++++++++");
+console.log("After Sorting")
+console.log(addressBook.sort());
