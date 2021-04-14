@@ -60,11 +60,12 @@ class AddressBook{
 
 let addressBook = [] ;
 try{
+    
     let contact1 = new AddressBook("Mark","Robinson","Malibu","Venice","California",100019,9019291971,"mark@gmail.com");
     let contact2 = new AddressBook("Robert","Downey","Broklyn","Manhattan","Newyork",300013,8918192191,"robert@gmail.com");
     let contact3 = new AddressBook("Chris","Davidson","Saltlake","Saltlakecity","Texas",400018,8891823349,"chris@gmail.com");
-    let contact4 = new AddressBook("Keem","Star","Capital","Phoenix","Arizona",866019,7827826798,"keem@gmail.com");
-    let contact5 = new AddressBook("Chris","Seagule","Panther","Panama","Texas",400712,7672789892,"mathew@gmail.com");
+    let contact4 = new AddressBook("Keem","Star","Capital","Phoenix","California",866019,7827826798,"keem@gmail.com");
+    let contact5 = new AddressBook("Mathew","Seagule","Panther","Manhattan","Texas",400712,7672789892,"mathew@gmail.com");
 
     addressBook.push(contact1); 
     addressBook.push(contact2);
@@ -72,9 +73,8 @@ try{
     addressBook.push(contact4);
 
     let arr= addressBook.map( ele => ele.getfirstname === contact5.getfirstname );
-    console.log(arr);
 
-    if(arr.includes(true)){
+    if( arr.includes(true) ){
         console.log("Contact already exits please enter new contact");
     }else{ addressBook.push(contact5); }
     
@@ -104,3 +104,13 @@ console.log(addressBook);
 let countArr = addressBook.map(ele => typeof ele.getfirstname === 'string');
 let sum = countArr.reduce((prev, curr)=> prev + curr); 
 console.log("Size of array after deltion: "+sum);
+
+console.log("++++++++++++++");
+
+let citycount = addressBook.map(ele => ele.city === 'Manhattan' );
+let sumofContactByCity = citycount.reduce((prev, curr)=> prev + curr); 
+console.log("Count of contact by city are: "+sumofContactByCity);
+
+let statecount = addressBook.map(ele => ele.state === 'California' );
+let sumofContactByState = statecount.reduce((prev, curr)=> prev + curr); 
+console.log("Count of contact by state are: "+sumofContactByState);
