@@ -46,9 +46,15 @@ class AddressBook{
     }
 }
 
+let addressBook = [];
 try{
-    let addressbook = new AddressBook("Omkar","Mali","Palaspe","Panvel","Maharashtra",400088,9029090642,"omkar@gmail.com");
-    console.log(addressbook.toString());
+    let contact1 = new AddressBook("Omkar","Mali","Palaspe","Panvel","Maharashtra",400088,9029090642,"omkar@gmail.com");
+    let contact2 = new AddressBook("Mukesh","Chouhan","Wadala","Mumbai","Mahharastra",400012,8918192191,"mukesh@gmail.com");
+    
+    addressBook.push(contact1); 
+    addressBook.push(contact2);
 }catch(e){
     console.error(e);
 }
+
+console.log(addressBook);
