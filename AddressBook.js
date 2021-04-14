@@ -54,7 +54,7 @@ class AddressBook{
 
     toString(){
         return "FirstName= " +this.firstname+ " LastName= " +this.lastname+ " Address= " +this.address+ " City= " 
-        +this.city+ " State= " +this.state+ " Zip= " +this.zip+ " PhoneNumber= " +this.phone_number+ " Email= " +this.email;
+        +this.city+ " State= " +this.state+ " Zip= " +this.zip+ " PhoneNumber= " +this.phone_number+ " Email= " +this.email+"\n";
     }
 }
 
@@ -104,17 +104,6 @@ console.log(addressBook);
 let countArr = addressBook.map(ele => typeof ele.getfirstname === 'string');
 let sum = countArr.reduce((prev, curr)=> prev + curr); 
 console.log("Size of array after deltion: "+sum);
-
-console.log("++++++++++++++");
-
-let citycount = addressBook.map(ele => ele.city === 'Manhattan' );
-let sumofContactByCity = citycount.reduce((prev, curr)=> prev + curr); 
-console.log("Count of contact by city are: "+sumofContactByCity);
-
-let statecount = addressBook.map(ele => ele.state === 'California' );
-let sumofContactByState = statecount.reduce((prev, curr)=> prev + curr); 
-console.log("Count of contact by state are: "+sumofContactByState);
-
 
 console.log("+++++++++++++");
 console.log("Contacts is Manhattan city is: \n"+addressBook.filter(element => element.city == 'Manhattan'));
