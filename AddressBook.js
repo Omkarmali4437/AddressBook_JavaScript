@@ -110,3 +110,13 @@ console.log("Contacts is Manhattan city is: \n"+addressBook.filter(element => el
 
 console.log("+++++++++++++");
 console.log("Contacts is California state is: \n"+addressBook.filter(element => element.state == 'California'));
+
+console.log("+++++++++++++");
+let citycount = addressBook.map(ele => ele.city === 'Manhattan' );
+let sumofContactByCity = citycount.reduce((prev, curr)=> prev + curr); 
+console.log("Count of contact by city are: "+sumofContactByCity);
+
+console.log("+++++++++++++");
+let statecount = addressBook.map(ele => ele.state === 'California' );
+let sumofContactByState = statecount.reduce((prev, curr)=> prev + curr); 
+console.log("Count of contact by state are: "+sumofContactByState);
