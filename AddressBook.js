@@ -142,8 +142,9 @@ try{
     console.log("Size of array before deltion: "+sum);
     console.log("+++++++++++++++"); 
 
-    if( addressBook.find( name => name.firstname == 'Mark' ) ){
-        addressBook.find( name => name.setfirstname = 'Robin' );
+    if( addressBook.find( name => name.firstname == 'Robert' ) ){
+        let id = addressBook.findIndex( name => name.firstname == 'Robert' );
+        addressBook[id].setfirstname="Robin";
     }else{ console.log("false"); }
 
     if( addressBook.find( name => name.firstname == 'Keem' ) ){
