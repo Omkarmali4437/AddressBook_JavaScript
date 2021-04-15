@@ -1,3 +1,9 @@
+var regexname = new RegExp('[A-Z]{1}[a-z]{3,}');
+var regexaddress = new RegExp('[A-Z]{1}[a-z]{4,}');
+var regexpincode = RegExp('^[1-9]{1}[0-9]{2}[\\s]?[0-9]{3}$');
+var regexphone = RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+var emailregex = RegExp('^[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-])*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*$');
+
 class AddressBook{
     firstname;
     lastname;
@@ -10,45 +16,96 @@ class AddressBook{
 
     constructor(...params){
 
-        let regexname = new RegExp('[A-Z]{1}[a-z]{3,}');
-        let regexaddress = new RegExp('[A-Z]{1}[a-z]{4,}');
-        let regexpincode = RegExp('^[1-9]{1}[0-9]{2}[\\s]?[0-9]{3}$');
-        let regexphone = RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-        let emailregex = RegExp('^[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-])*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*$');
+        this.setfirstname = params[0];
+        this.setlastname = params[1];
+        this.setaddress = params[2];
+        this.setcity = params[3];
+        this.setstate = params[4];
+        this.setzip = params[5];
+        this.setphonenumber = params[6];
+        this.setemail = params[7];   
 
-        if( regexname.test(params[0]) && regexname.test(params[1]) ){
-            this.firstname = params[0];
-            this.lastname = params[1];
-        }else{ throw "Incorrect name"; }
-
-        if( regexaddress.test(params[2]) && regexaddress.test(params[3]) && regexaddress.test(params[4]) ){
-            this.address = params[2];
-            this.city = params[3];
-            this.state = params[4];
-        }else{ throw "Incorrect Address or City or State"; }
-
-        if( regexpincode.test(params[5]) ){
-            this.zip = params[5];
-        }else{ throw "Incorrect Pincode"; }
-
-        if( regexphone.test(params[6]) ){
-            this.phone_number = params[6];
-        }else{ throw "Incorrect PhoneNumber"; }
-
-        if( emailregex.test(params[7]) ){
-            this.email = params[7];   
-        }else{ throw "Incorrect Email Id"; }
     }
 
     get getfirstname(){ return this.firstname; }
     
     set setfirstname(firstname){ 
-        let regexname = RegExp('[A-Z]{1}[a-z]{3,}');
         if(regexname.test(firstname)){
             this.firstname = firstname;
         }
         else{
             throw "Name is Incorrect";
+        }
+    }
+
+    get getlastname(){ return this.lastname; }
+
+    set setlastname(lastname){
+        if(regexname.test(lastname)){
+            this.lastname = lastname;
+        }
+        else{
+            throw "Name is Incorrect";
+        }
+    }
+
+    get getaddress(){ return this.address; }
+
+    set setaddress(address){
+        if(regexaddress.test(address)){
+            this.address = address;
+        }else{
+            throw "Address is Incorrect";
+        }
+    }
+
+    get getcity(){ return this.city; }
+
+    set setcity(city){ 
+        if(regexaddress.test(city)){
+            this.city = city;
+        }else{
+            throw "City is Incorrect";
+        }
+    }
+
+    get getstate(){ return this.state; }
+
+    set setstate(state){
+        if(regexaddress.test(state)){
+            this.state = state;
+        }else{
+            throw "State is Incorrect";
+        }
+    }
+
+    get getzip(){ return this.zip; }
+
+    set setzip(zip){
+        if(regexpincode.test(zip)){
+            this.zip = zip;
+        }else{
+            throw "Pincode is Incorrect";
+        }
+    }
+
+    get getphonenumber(){ return this.phone_number; }
+
+    set setphonenumber(phone_number){
+        if(regexphone.test(phone_number)){
+            this.phone_number = phone_number;
+        }else{
+            throw "Phone Number is Incorrect";
+        }
+    }
+
+    get getemail(){ return this.email; }
+
+    set setemail(email){
+        if(emailregex.test(email)){
+            this.email = email;
+        }else{
+            throw "Email is Incorrect";
         }
     }
 
@@ -122,5 +179,5 @@ let sumofContactByState = statecount.reduce((prev, curr)=> prev + curr);
 console.log("Count of contact by state are: "+sumofContactByState);
 
 console.log("+++++++++++++");
-console.log("After Sorting")
+console.log("After Sorting");
 console.log(addressBook.sort());
